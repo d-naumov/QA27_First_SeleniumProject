@@ -9,13 +9,18 @@ public class CreateAccountTests extends TestBase {
 
   //precondition : user should be log out
   // if login link not present
-  //click on the Login link
+  //click Log out link
 
   // click on the Register link
+  // click on the gender male
+  //enter First name
+  //enter Last name
   //enter email
   //enter password
+  //enter Confirm password
   //click on the Registration button
-  //assert: Sign out button is present
+  // click on the Continue button
+  // assert: Log out button is present
 
   @BeforeMethod
   public void ensurePrecondition() {
@@ -29,7 +34,7 @@ public class CreateAccountTests extends TestBase {
   public void registerNewUserPositiveTest() {
     //click on the Login link
     driver.findElement(By.cssSelector("[href='/login']")).click();
-//href="/logout"
+
     // click on the Register link
     driver.findElement(
             By.xpath("//body/div[4]/div[1]/div[4]/div[2]/div[1]/div[2]/div[1]/div[1]/div[3]/input[1]"))
