@@ -21,7 +21,7 @@ public class LoginTests extends TestBase {
     //click on the Login button
     clickOnLoginButton();
     // assert: Log out button is present
-    Assert.assertTrue(isSingOutButtonPresent());
+    Assert.assertTrue(isLogoutLinkPresent());
 
   }
 

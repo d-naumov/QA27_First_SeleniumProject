@@ -43,19 +43,16 @@ public class TestBase {
     }
   }
 
-  public boolean isProductByCart(String text) {
-    List<WebElement> product = driver.findElements(By.xpath("//span[contains(text(),'(3)')]"));
-    for (WebElement element : product) {
-      if (element.getText().contains(text)) {
-        return true;
-      }
-    }
-    return false;
+  public boolean isProductInCart(String text) {
+    // Locator for finding an item in the cart
+    By productLocator = By.xpath(
+        "//div[@class='order-summary-content']//td[@class='product']/a[contains(text(),'" + text
+            + "')]");
+    // Finding elements by locator
+    List<WebElement> productsInCart = driver.findElements(productLocator);
+    // Checking the presence of product in the cart
+    return !productsInCart.isEmpty();
   }
-
-  // public void clickOnSignOutButton() {
-  //   driver.findElement(By.cssSelector("[href='/logout']")).click();
-  //}
 
   public boolean isLoginLinkPresent() {
     return isElementPresent(By.cssSelector("[href='/login']"));
@@ -129,7 +126,7 @@ public class TestBase {
     click(By.cssSelector(".buttons:nth-child(5)"));
   }
 
-  public boolean isSingOutButtonPresent() {
+  public boolean isLogoutLinkPresent() {
     return isElementPresent(By.cssSelector("[href='/logout']"));
   }
 

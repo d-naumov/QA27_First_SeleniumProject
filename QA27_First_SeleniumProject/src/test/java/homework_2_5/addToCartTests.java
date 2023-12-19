@@ -39,7 +39,10 @@ public class addToCartTests extends TestBase {
 
     clickOnShoppingCart();
 
-    Assert.assertTrue(isProductByCart("3"));
+    // Assert.assertTrue(isProductByCart("3"));
+    Assert.assertTrue(isProductInCart("14.1-inch Laptop"));
+    Assert.assertTrue(isProductInCart("Build your own cheap computer"));
+    Assert.assertTrue(isProductInCart("Build your own computer"));
   }
 
 

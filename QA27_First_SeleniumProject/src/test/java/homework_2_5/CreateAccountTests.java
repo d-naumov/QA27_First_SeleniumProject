@@ -47,7 +47,7 @@ public class CreateAccountTests extends TestBase {
     clickOnContinueButton();
 
     // assert: Log out button is present
-    Assert.assertTrue(isSingOutButtonPresent());
+    Assert.assertTrue(isLogoutLinkPresent());
 
   }
 
